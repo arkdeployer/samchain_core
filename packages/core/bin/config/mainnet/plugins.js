@@ -4,7 +4,7 @@ module.exports = {
     "@arkecosystem/core-state": {},
     "@arkecosystem/core-database-postgres": {
         connection: {
-            host: process.env.CORE_DB_HOST || "localhost",
+            host: process.env.CORE_DB_HOST || "127.0.0.1",
             port: process.env.CORE_DB_PORT || 5432,
             database: process.env.CORE_DB_DATABASE || `${process.env.CORE_TOKEN}_${process.env.CORE_NETWORK_NAME}`,
             user: process.env.CORE_DB_USERNAME || process.env.CORE_TOKEN,
@@ -28,13 +28,13 @@ module.exports = {
                 ipfs: 250,
                 timelockTransfer: 500,
                 multiPayment: 500,
-                delegateResignation: 100,
+                delegateResignation: 400000,
             },
         },
     },
     "@arkecosystem/core-p2p": {
         server: {
-            port: process.env.CORE_P2P_PORT || 4001,
+            port: process.env.CORE_P2P_PORT || 4002,
         },
     },
     "@arkecosystem/core-blockchain": {},
